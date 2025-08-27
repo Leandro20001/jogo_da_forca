@@ -48,7 +48,7 @@ namespace jogo_da_forca
 
             string letra = entrada;
 
-            if (letrasDescobertas.Contains(letra) || letrasErradas.Contains(letra))
+            if (letrasDescobertas.Contains(letra))
             {
                 MessageBox.Show("Você já tentou essa letra.", "Letra repetida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBox1.Clear();
@@ -70,6 +70,7 @@ namespace jogo_da_forca
             {
                 pictureBox1.BackgroundImage = Image.FromFile("..\\..\\..\\phase" + (tentativas + 1) + ".PNG");
                 letrasErradas.Add(letra);
+                letrasDescobertas.Add(letra);
                 tentativas++;
             }
 
